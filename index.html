@@ -67,8 +67,12 @@
     text-decoration: none;
     font-weight: 600;
     transition: transform 0.1s ease, border-color 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
   }
-  .links a:hover { transform: translateY(-2px); border-color: var(--accent); }
+  @media (hover: hover) {
+    .links a:hover { transform: translateY(-2px); border-color: var(--accent); }
+  }
+  .links a:active { transform: scale(0.98); border-color: var(--accent); }
   .links svg { width: 1.15rem; height: 1.15rem; fill: currentColor; flex-shrink: 0; }
   footer {
     margin-top: 3rem;
