@@ -74,6 +74,35 @@
   }
   .links a:active { transform: scale(0.98); border-color: var(--accent); }
   .links svg { width: 1.15rem; height: 1.15rem; fill: currentColor; flex-shrink: 0; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin: 2.25rem 0 0.85rem;
+    text-transform: uppercase;
+  }
+  .talk {
+    display: block;
+    padding: 1rem 1.1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    text-align: left;
+    transition: transform 0.1s ease, border-color 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (hover: hover) {
+    .talk:hover { transform: translateY(-2px); border-color: var(--accent); }
+  }
+  .talk:active { transform: scale(0.98); border-color: var(--accent); }
+  .talk .event { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; color: var(--muted); }
+  .talk .title { display: block; margin: 0.35rem 0 0.5rem; font-weight: 700; line-height: 1.5; font-size: 0.95rem; }
+  .talk .sub { display: block; margin-top: 0.3rem; font-size: 0.8rem; font-weight: 600; color: var(--muted); line-height: 1.5; }
+  .talk .when { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: var(--muted); }
+  .talk .when span { white-space: nowrap; }
   footer {
     margin-top: 3rem;
     max-width: 30rem;
@@ -99,6 +128,17 @@
       GitHub
     </a>
   </nav>
+
+  <p class="section-label">Talks</p>
+  <a class="talk" href="https://2026.droidkaigi.jp/timetable/1236227/">
+    <span class="event">DroidKaigi 2026</span>
+    <span class="title">あなたのANRはどこから？<span class="sub">発生する仕組みを診断し、症状別に処方する</span></span>
+    <span class="when">
+      <span>2026.09.02</span>
+      <span>16:20–17:00</span>
+      <span>Narwhal</span>
+    </span>
+  </a>
 </main>
 <footer>
   <p>The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0 Attribution License</a>.</p>
