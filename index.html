@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>pelantica</title>
-<meta name="description" content="pelantica (chomi) — Android developer. Links to X and GitHub.">
+<meta name="description" content="pelantica (chomi) — Android developer. Links to X, GitHub, tech blog and talks.">
 <meta property="og:title" content="pelantica">
 <meta property="og:description" content="chomi · Android developer">
 <meta property="og:image" content="https://pelantica.github.io/icon.jpg">
@@ -83,26 +83,51 @@
     text-transform: uppercase;
   }
   .talk {
-    display: block;
     padding: 1rem 1.1rem;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 0.9rem;
     color: var(--text);
-    text-decoration: none;
     text-align: left;
-    transition: transform 0.1s ease, border-color 0.1s ease;
+  }
+  .talk .event { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; color: var(--muted); }
+  .talk .title {
+    display: block;
+    margin: 0.35rem 0 0.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: var(--text);
+    text-decoration: none;
     -webkit-tap-highlight-color: transparent;
   }
   @media (hover: hover) {
-    .talk:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .talk a.title:hover { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-color: var(--accent); }
   }
-  .talk:active { transform: scale(0.98); border-color: var(--accent); }
-  .talk .event { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; color: var(--muted); }
-  .talk .title { display: block; margin: 0.35rem 0 0.5rem; font-weight: 700; line-height: 1.5; font-size: 0.95rem; }
+  .talk a.title:active { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-color: var(--accent); }
   .talk .sub { display: block; margin-top: 0.3rem; font-size: 0.8rem; font-weight: 600; color: var(--muted); line-height: 1.5; }
   .talk .when { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: var(--muted); }
   .talk .when span { white-space: nowrap; }
+  .talk-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 0.75rem 0 -0.5rem -0.5rem;
+  }
+  .talk-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    color: var(--muted);
+    transition: color 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .talk-links svg { width: 1.25rem; height: 1.25rem; fill: currentColor; flex-shrink: 0; }
+  @media (hover: hover) {
+    .talk-links a:hover { color: var(--text); }
+  }
+  .talk-links a:active { color: var(--text); }
   footer {
     margin-top: 3rem;
     max-width: 30rem;
@@ -127,18 +152,30 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
       GitHub
     </a>
+    <a href="https://tech.nri-net.com/archive/author/c2-nishimura">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      Tech Blog
+    </a>
   </nav>
 
   <p class="section-label">Talks</p>
-  <a class="talk" href="https://2026.droidkaigi.jp/timetable/1236227/">
+  <div class="talk">
     <span class="event">DroidKaigi 2026</span>
-    <span class="title">あなたのANRはどこから？<span class="sub">発生する仕組みを診断し、症状別に処方する</span></span>
+    <a class="title" href="https://2026.droidkaigi.jp/timetable/1236227/">あなたのANRはどこから？<span class="sub">発生する仕組みを診断し、症状別に処方する</span></a>
     <span class="when">
       <span>2026.09.02</span>
       <span>16:20–17:00</span>
       <span>Narwhal</span>
     </span>
-  </a>
+    <div class="talk-links">
+      <a href="https://speakerdeck.com/nrinetcom/droidkaigi2026-anata-no-anr-ha-doko-kara" aria-label="スライド (Speaker Deck)" title="Slides">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3H3a2 2 0 00-2 2v11a2 2 0 002 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 002-2V5a2 2 0 00-2-2zm0 13H3V5h18v11z"/></svg>
+      </a>
+      <a href="https://youtu.be/hMQGtxLLeNY" aria-label="動画 (YouTube)" title="Video">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
 </main>
 <footer>
   <p>The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0 Attribution License</a>.</p>
